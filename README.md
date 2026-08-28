@@ -1,5 +1,9 @@
 # golden-link
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+![Platform: macOS Apple Silicon](https://img.shields.io/badge/platform-macOS%20(Apple%20Silicon)-lightgrey?style=for-the-badge)
+![Shell: bash](https://img.shields.io/badge/shell-bash-89e051?style=for-the-badge)
+
 An agent skill for **sovereign photo backup** on a Mac: export one person's photos
 from Apple Photos to *your own* Proton Drive, and seed an *on-device* face-recognition
 model — with nothing sensitive ever leaving machines you control.
@@ -25,6 +29,21 @@ vision API, no third-party photo service.
 | [`REFERENCE.md`](REFERENCE.md) | Setup detail, pitfalls, and an always-on-box appendix. |
 | [`scripts/export-local.sh`](scripts/export-local.sh) | Phase 1 — export photos already on disk → Proton. |
 | [`scripts/export-missing.sh`](scripts/export-missing.sh) | Phase 2 — download iCloud-evicted originals, chunked + disk-guarded. |
+
+## Project structure
+
+```
+golden-link/
+├── scripts/
+│   ├── export-local.sh
+│   └── export-missing.sh
+├── AGENTS.md
+├── CLAUDE.md
+├── LICENSE
+├── README.md
+├── REFERENCE.md
+└── SKILL.md
+```
 
 ## Quick start
 
@@ -65,7 +84,7 @@ These are load-bearing, not boilerplate. Each one comes from a real failure mode
 Apple Silicon Mac · [`osxphotos`](https://github.com/RhetTbull/osxphotos) ·
 [`rclone`](https://rclone.org) with a Proton Drive remote · a Proton Drive account.
 Optional: [`pymobiledevice3`](https://github.com/doronz88/pymobiledevice3) for USB import;
-InsightFace for the local face model.
+[InsightFace](https://github.com/deepinsight/insightface) for the local face model.
 
 ## Status
 
